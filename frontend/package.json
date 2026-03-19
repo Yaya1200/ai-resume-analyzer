@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "pdfjs-dist": "^5.5.207"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2"
+  }
+}
