@@ -5,12 +5,12 @@ export default function App() {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // ✅ Handle file selection
+  
   const handleUpload = (e) => {
     if (e.target.files && e.target.files[0]) {
       const selectedFile = e.target.files[0];
 
-      // 🔴 Validate file type
+     
       if (!selectedFile.name.endsWith(".docx")) {
         alert("Please upload a .docx file");
         return;
@@ -21,7 +21,7 @@ export default function App() {
     }
   };
 
-  // ✅ Send file to backend
+
   const analyze = async () => {
     if (!file) {
       alert("Upload a Word file first");
@@ -40,7 +40,7 @@ export default function App() {
           return;
         }
 
-        // ✅ Convert to base64
+    
         const base64 = reader.result.split(",")[1];
 
         console.log("Sending file to backend...");
@@ -76,15 +76,12 @@ export default function App() {
         AI Resume Analyzer (Word)
       </h1>
 
-      {/* ✅ File Upload */}
       <input
         type="file"
         accept=".docx"
         onChange={handleUpload}
         className="mb-4"
       />
-
-      {/* ✅ Analyze Button */}
       <button
         onClick={analyze}
         className="bg-blue-600 px-4 py-2 rounded-lg"
@@ -92,7 +89,6 @@ export default function App() {
         {loading ? "Analyzing..." : "Analyze Resume"}
       </button>
 
-      {/* ✅ Results */}
       {result && (
         <div className="mt-8 grid md:grid-cols-2 gap-6">
           <div className="bg-gray-800 p-6 rounded-xl">
